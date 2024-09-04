@@ -12,3 +12,5 @@ mkdir -p "${DIST_DIR}"
 
 ## build
 create_zip_file "authorizer"
+
+echo "Done."

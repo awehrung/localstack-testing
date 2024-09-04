@@ -1,8 +1,10 @@
+import logging
 import os
 import random
 
 
 def lambda_handler(event, context):
+    logging.info("HELLO FROM AUTHORIZER")
     return {
         "isAuthorized": True,
         "context": {
