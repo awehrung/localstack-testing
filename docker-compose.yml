@@ -1,0 +1,21 @@
+services:
+  localstack:
+    image: localstack/localstack-pro:3.7.0
+    container_name: "localstack"
+    env_file:
+      - localstack.env
+      - ../localstack_api_key.env
+    ports:
+      - "4566:4566"
+    volumes:
+      - "./configuration/boot.sh:/etc/localstack/init/boot.d/boot.sh"
+      - "./configuration/ready.sh:/etc/localstack/init/ready.d/ready.sh"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./configuration/lambda:/opt/app/lambda:ro"
+      - "./lambda/dist:/opt/code/lambda_import"
+
+  hello-world:
+    image: vad1mo/hello-world-rest:latest
+    container_name: "hello-world"
+    ports:
+      - "5050:5050"
