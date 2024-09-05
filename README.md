@@ -1,5 +1,13 @@
 # How to use
 
+Build the lambda `dist`:
+
+```shell
+./build.sh
+```
+
+Start the containers:
+
 ```shell
 docker-compose up -d
 ```
