@@ -2,9 +2,6 @@
 
 set -e
 
-Color_On="\033[1;32m"
-Color_Off="\033[0m" # Color Reset
-
 PYTHON_RUNTIME="python3.12"
 STAGE_NAME="local"
 BACKEND_URL="http://hello-world:5050"
@@ -12,7 +9,7 @@ API_NAME="myapi"
 AUTHORIZER_NAME="authorizer"
 
 function echo_green() {
-  echo -e "${Color_On} $1 ${Color_Off}"
+  echo -e "\033[1;32m $1 \033[0m"
 }
 
 # create lambda
